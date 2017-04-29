@@ -1,0 +1,20 @@
+{{!< default}}
+
+{{#post}}
+	<article>
+	<header class="post-header" {{#if image}} style="background-image: url({{image}});" {{else}} style="background-image: url({{@blog.cover}});" {{/if}}>
+		<div class="post-title">
+			<h1>{{title}}</h1>
+			<p class="post-meta">{{date published_at timeago="true"}}</p>	
+		</div>
+	</header>
+	<section class="article {{post_class}}">
+		{{content}}
+	</section>
+	</article>
+	{{#if tags}}
+		<ul class="post-tags-container">
+			{{#foreach tags limit=3}}<a class="post-tags" href="{{url}}"><li>more on {{name}}</li></a>{{/foreach}}
+		</div>
+	{{/if}}
+{{/post}}

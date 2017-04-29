@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Load custom favicon --}}
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{!-- Styles --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bigfoot.css"}}" />
+
+    {{!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro" rel="stylesheet"> --}}
+
+    {{!-- ghost header stuff --}}
+		{{ghost_head}}
+	</head>
+
+	<body class="{{body_class}} site">
+			<main class="wrapper">
+					{{{body}}}
+			</main>
+
+			<footer class="site-footer">
+				<div class="hc-footer-left">
+					{{navigation}}
+				</div>
+				<div class="hc-footer-left">
+					{{!-- column 2 --}}
+					<ul>
+					<li><svg class="icon"><use xlink:href="{{asset "svg/hc-icons.svg"}}#twitter-black-shape"></use></svg><a class="icon-link" href="{{twitter_url}}">{{@blog.twitter}}</a></li>
+					<li><svg class="icon"><use xlink:href="{{asset "svg/hc-icons.svg"}}#github-logo" /></svg><a class="icon-link" href="https://github.com/">you on GitHub</a></li>
+					<li><svg class="icon"><use xlink:href="{{asset "svg/hc-icons.svg"}}#note" /></svg><a class="icon-link" href="mailto:you@your.email.DO.NOT.SPAM.ME">email</a></li>
+					</ul>
+				</div>				
+				<div class="hc-footer-right">
+					{{!-- column 4 --}}
+					<p>All content &#xA9 {{@blog.title}} {{!-- except as noted in <i>Acknowledgements</i>. Text licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> --}}.</p>
+					<p>Please ensure any redistribution adheres to the <a href="https://wiki.creativecommons.org/wiki/Best_practices_for_attribution">Creative Commons Best Practices for Attribution</a>.</p>
+					<p>Made with <a href="https://ghost.org"><svg class="icon ghost-icon"><use xlink:href="{{asset "svg/hc-icons.svg"}}#ghost-logo" /></svg></a> using Hacker Chic theme.</p>
+				</div>
+				<div class="hc-footer-right">
+					{{!-- column 3 --}}
+				</div>				
+			</footer>
+
+			{{!-- scripts --}}
+			<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+			<script type="text/javascript"  src="{{asset "js/prism.js"}}"></script>
+			<script type="text/javascript"  src="{{asset "js/bigfoot.min.js"}}"></script>
+			<script type="text/javascript">$.bigfoot();</script>
+			{{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+			{{ghost_foot}}		
+	</body>
+</html>

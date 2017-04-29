@@ -1,0 +1,14 @@
+{{!< default}}
+
+<header>
+	<div class="hc-site-header">
+	{{#if @blog.logo}}<a href="{{@blog.url}}"><div class="blog-logo" style="background-image: url({{@blog.logo}});"></div></a>{{/if}}
+	</div>
+	<div class="hc-site-header hc-header-text">
+	<h2>Everything I've ever blogged about</h2>
+	<h1 class="tag-page-heading">{{tag.name}}</h1>
+	</div>
+</header>
+<div class="clear"></div>
+
+{{>loop}}
