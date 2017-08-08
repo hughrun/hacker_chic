@@ -1,4 +1,25 @@
 {
-  "name": "hacker_chic",
-  "version": "2017.04.002"
+  "name": "hacker-chic",
+  "version": "2.1.0",
+  "engines": {
+  	"ghost": "^1.0.0"
+  },
+  "license": "MIT",
+  "config": {
+  	"posts_per_page": 7
+  },
+  "description": "A minimal, text-driven theme eclusively for Ghost.",
+  "author": {
+  		"name": "Hugh Rundle",
+  	  "email": "hugh@hughrundle.net",
+  	  "url": "https://hughrundle.net"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+        "Minimal",
+        "Personal Blogs"
+    ]
+	},
+	"homepage": "https://github.com/hughrun/hacker_chic"
 }

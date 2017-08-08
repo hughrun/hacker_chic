@@ -1,7 +1,7 @@
 {{#foreach posts}}
 
-	{{#if featured}}
-		<section class="{{post_class}} post-listing hc-featured" style="background-image: url({{image}})">
+	{{#if @first}}
+		<section class="{{post_class}} post-listing hc-featured" style="background-image: url({{img_url feature_image}})">
 			<a href="{{url}}"><div class="hc-featured-text-box">
 				<h2 class="hc-featured-text">{{{title}}}</h2>
 				<section>
@@ -12,20 +12,22 @@
 		{{/if}}
 {{/foreach}}
 
-{{#foreach posts}}
-	{{#unless featured}}
-		<section class="{{post_class}} post-listing">
-			<h2><a href="{{url}}">{{{title}}}</a></h2>
-				<aside class="post-meta">
-					<p>Thoughts {{#if tags}} about {{tags}} {{/if}} written {{date published_at timeago="true"}}.</p>
-				</aside>
-			<section>
-			<p>{{excerpt words="20"}}...</p>
+<section class="non-featured">
+	{{#foreach posts}}
+		{{#unless @first}}
+			<section class="{{post_class}} post-listing {{!-- {{#if @odd}}odd-post{{else}}even-post{{/if}} --}}">
+				<h2><a href="{{url}}">{{{title}}}</a></h2>
+					<aside class="post-meta">
+						<p>Thoughts {{#if tags}} about {{tags}} {{/if}} written {{date published_at timeago="true"}}.</p>
+					</aside>
+				<section>
+				<p>{{excerpt words="20"}}...</p>
+				</section>
+				<hr class="post-list-line">
 			</section>
-		</section>
-	{{/unless}}
-{{/foreach}}
-
+			{{/unless}}
+	{{/foreach}}
+</section>
 <div class="clear"></div>
 <div class="hc-pagination">
 	{{pagination}}

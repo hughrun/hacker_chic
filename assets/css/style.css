@@ -48,9 +48,9 @@ body {
 }
 
 .article {
-	padding: 0 5vw;
+	padding: 0 10vw;
 	margin-bottom:4em;
-	font-size: 120%;	
+	font-size: 120%;
 }
 
 a {
@@ -170,12 +170,10 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, header a {
 
 /* listings */
 
-.post-listing {
-	width: 45%;
-	min-height: 10em;
-	margin: 2.5%;
-	float: left;
-	border-top: 2px dashed #555959;
+.non-featured .post-listing {
+	padding: 0 2.5vw;
+	display: inline-block;
+	break-inside: avoid;
 }
 
 .post-meta {
@@ -204,6 +202,19 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, header a {
 .hc-featured-text-box {
 	background: none;
 	padding: 0 20%;
+}
+
+.non-featured {
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+  column-gap: 0px;
+}
+
+.post-list-line {
+	margin-left: 25%;
+	margin-right: 25%;
+	border-top: 2px dashed #000;
 }
 
 /* posts */
@@ -236,6 +247,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, header a {
 
 .article a {
 	font-size: 90%;
+	font-weight: bold;
 }
 
 .post-tags-container {
@@ -330,6 +342,12 @@ a.post-tags {
 		width: 40%;
 	}
 
+	.non-featured {
+	  -moz-column-count: 2;
+	  -webkit-column-count: 2;
+	  column-count: 2;
+	}
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -339,9 +357,7 @@ a.post-tags {
 	}
 
 	.post-listing {
-		width: 90%;
-		float: none;
-		text-align: justify;
+		text-align: center;
 	}
 
 	.blog-logo {
@@ -357,6 +373,12 @@ a.post-tags {
 
 	.hc-header-text {
 		margin: 0 10vw;
+	}
+
+	.non-featured {
+	  -moz-column-count: unset;
+	  -webkit-column-count: unset;
+	  column-count: unset;
 	}
 
 	.post-title {
